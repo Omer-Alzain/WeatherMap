@@ -1,5 +1,6 @@
 import {initMap,moveMapToLocation,addMarker} from "./map.js";
 import {retrieveLocationData} from "./geocoding.js";
+import {retrieveWeatherData} from "./weather.js";
 initMap();
 
 const form = document.getElementById('search-form');
@@ -13,8 +14,10 @@ form.addEventListener('submit', async (event) => {
             const response = await retrieveLocationData(location);
             if (response && response.length > 0) {
                 const { lat, lon } = response[0];
+                const weatherData = await retrieveWeatherData(lat, lon);
                 moveMapToLocation(lat, lon);
                 addMarker(lat, lon, location);
+                console.log(weatherData);
             } else {
                 alert('Location not found.');
             }
