@@ -17,7 +17,10 @@
             <input type="text" id="location-input" placeholder="Enter city name">
             <button type="submit">Get Weather</button>
         </form>
-        <div id="loading"></div>
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+            <p>Loading ...</p>
+        </div>
         <div id="error"></div>
         <div id="map"></div>
     </main>
