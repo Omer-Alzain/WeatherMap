@@ -27,7 +27,27 @@ export function addMarker(lat, lng, weatherData) {
                 <p>Wind Speed: ${weatherData.wind} m/s</p>
                 <p>Clouds: ${weatherData.clouds}%</p>
                 <p>Status: ${weatherData.status}</p>
+                <button id="share-button">Share</button>
             </div>
         `);
+        marker.on('popupopen', () => {
+            const shareButton = document.getElementById('share-button');
+            shareButton.addEventListener('click', () => {
+                const shareData = {
+                    title: 'Weather Information',
+                    text: `Weather in ${weatherData.location}: ${weatherData.status}, Temperature: ${weatherData.temperature}°C, Humidity: ${weatherData.humidity}%, Wind Speed: ${weatherData.wind} m/s, Clouds: ${weatherData.clouds}%`,
+                    url: window.location.href
+                };
+                if (navigator.share) {
+                    navigator.share(shareData)
+                        .then(() => console.log('Weather information shared successfully.'))
+                        .catch((error) => new Error(`Error sharing weather information.Browser may not support sharing.`));
+                } else {
+                    navigator.clipboard.writeText(shareData.text + ' ' + shareData.url)
+                        .then(() => alert('Weather information copied to clipboard.'))
+                        .catch((error) => new Error(`Error copying weather information to clipboard.Browser may not support clipboard API.`));
+                }
+            });
+        });
     }
 }
