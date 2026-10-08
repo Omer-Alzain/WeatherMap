@@ -3,9 +3,11 @@ export async function retrieveWeatherData(lat, lon) {
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
     try {
         const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`Unable to retrieve weather information.\nPlease try again later.`);
+        }
         return await response.json();
     } catch (error) {
-        console.error('Error fetching weather data:', error);
-        throw error;
+        throw new Error(`Unable to retrieve weather information.\nPlease try again later.`);
     }
 }

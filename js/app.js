@@ -6,6 +6,13 @@ initMap();
 const form = document.getElementById('search-form');
 const locationInput = document.getElementById('location-input');
 const loadingIndicator = document.getElementById('loading');
+const errorMessage = document.getElementById('error-message');
+const errorContainer = document.getElementById('error-container');
+const okButton = document.getElementById('ok-button');
+
+okButton.addEventListener('click', () => {
+    errorContainer.classList.add('hidden');
+});
 
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -21,11 +28,12 @@ form.addEventListener('submit', async (event) => {
                 moveMapToLocation(lat, lon);
                 addMarker(lat, lon, {location, temperature, humidity, wind, clouds, status, icon});
             } else {
-                alert('Location not found.');
+                errorMessage.textContent = 'Location not found.';
+                errorContainer.classList.remove('hidden');
             }
         } catch (error) {
-            console.error('Error retrieving location data:', error);
-            alert('An error occurred while retrieving location data.');
+            errorMessage.textContent = error.message;
+            errorContainer.classList.remove('hidden');
         }finally {
             loadingIndicator.classList.add('hidden');
         }
