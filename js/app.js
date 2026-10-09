@@ -37,6 +37,9 @@ form.addEventListener('submit', async (event) => {
         }finally {
             loadingIndicator.classList.add('hidden');
         }
+    }else {
+        errorMessage.textContent = 'Please enter a location.';
+        errorContainer.classList.remove('hidden');
     }
 
 })   

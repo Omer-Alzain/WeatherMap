@@ -14,7 +14,8 @@
     </header>
     <main id="main">
         <form id="search-form">
-            <input type="text" id="location-input" placeholder="Enter city name">
+            <label for="location-input" class="visually-hidden">Enter a city or location</label>
+            <input type="text" id="location-input" name="location" placeholder="Enter city name" required>
             <button type="submit">Get Weather</button>
         </form>
         <div id="loading" class="hidden">
