@@ -1,14 +1,14 @@
-# WeatherMap 🌦️
+# WeatherMap 
 
 Discover the weather anywhere in the world.
 
 WeatherMap is a single-page web application that allows users to search for a location, explore it on an interactive map, and view its current weather conditions. It uses asynchronous JavaScript to retrieve geographic coordinates and weather information from external APIs without reloading the page.
 
-## 🌐 Live Demo
+## Live Demo
 
 **Live website:** [https://omer-alzain.github.io/WeatherMap/]
 
-## ✨ Features
+## Features
 
 * **Location Search:** Search for a city or location by name.
 * **Interactive Map:** View locations on a map powered by Leaflet and OpenStreetMap.
@@ -19,7 +19,7 @@ WeatherMap is a single-page web application that allows users to search for a lo
 * **Weather Sharing:** Share weather information using the Web Share API or clipboard fallback.
 * **Facebook Sharing:** Open Facebook's sharing interface for the current page.
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 * **HTML5** — Page structure and content.
 * **CSS3** — Styling, layout, and responsive design.
@@ -30,7 +30,7 @@ WeatherMap is a single-page web application that allows users to search for a lo
 * **Nominatim** — Location search and geocoding.
 * **OpenWeatherMap Current Weather API** — Current weather data.
 
-## 📁 Project Structure
+##  Project Structure
 
 ```text
 WeatherMap/
@@ -53,7 +53,7 @@ WeatherMap/
 * **`weather.js`** — Requests current weather information from OpenWeatherMap.
 * **`map.js`** — Initializes the Leaflet map, updates its view, manages markers, and displays weather popups.
 
-## ⚙️ How It Works
+##  How It Works
 
 1. The application initializes an interactive map centered on Khartoum, Sudan.
 2. The user enters a location and submits the search form.
@@ -63,7 +63,7 @@ WeatherMap/
 6. The map moves to the selected location, and a marker displays the weather information in a popup.
 7. Loading and error states provide feedback throughout the process.
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -101,7 +101,7 @@ WeatherMap/
 
 Because the application uses JavaScript ES modules, serving it over HTTP is preferable to opening `index.html` directly using a `file://` URL.
 
-## 🔑 API Configuration and Security
+##  API Configuration and Security
 
 WeatherMap uses the following external services:
 
@@ -114,14 +114,14 @@ Obtain an API key through the [OpenWeatherMap website](https://openweathermap.or
 
 Please also respect the Nominatim usage policy when making geocoding requests.
 
-## 📱 Browser Compatibility
+##  Browser Compatibility
 
 WeatherMap is designed for modern browsers that support JavaScript ES modules and the Fetch API. Sharing capabilities depend on browser support; where supported, the application uses the Web Share API, with clipboard copying as a fallback.
 
-## 🎓 Project Context
+##  Project Context
 
 WeatherMap was developed as a course project for **Advanced Web Technologies**. It demonstrates asynchronous API integration, modular JavaScript, dynamic DOM updates, interactive maps, and user-facing loading and error states.
 
-## 📄 License
+##  License
 
 No license has been specified yet. Add a license if you intend to permit others to reuse, modify, or distribute this project.
