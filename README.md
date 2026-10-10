@@ -6,7 +6,7 @@ WeatherMap is a single-page web application that allows users to search for a lo
 
 ## 🌐 Live Demo
 
-**Live website:** []
+**Live website:** [https://omer-alzain.github.io/WeatherMap/]
 
 ## ✨ Features
 
